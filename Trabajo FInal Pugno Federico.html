@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Trabajo Final Laboratotio 3, Pugno Federico</title>
+   
+    <style type="text/css">
+    
+    body {
+    font-family: Verdana;
+    font-size: 14px;
+    height: auto;
+    background-color: #efefef;      
+}
+#container {
+    border: 4px solid black;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+#Logo {
+    border: 4px solid red;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: white;
+}
+#logoimagen {
+    border: 4px solid red;
+    width: 30%;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+#Menu {
+    border: 4px solid blue;
+    padding: 20px;
+    margin: 20px;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    }
+#Contenido {
+    border: 3px solid gray;
+    padding: 20px;
+    margin: 20px;
+    background-color: #ECF0F1;
+    height: auto;
+    opacity: 1;
+}
+.titulo {
+	color:#00006F; 
+	font-weight:bold; 
+	font-size:15px; 
+	margin-top:0em; 
+	margin-bottom:0em;
+}
+#formpasajes {
+	margin-top:15px; 
+	margin-bottom:30px;
+
+}
+#cantpas {
+	width:30%;
+	float:left;"
+}
+.text_des {
+    background-color: #efefef;
+}
+#formcomprapasajes label{
+	width:150px; 
+	float:left; 
+	line-height:20px;
+}
+.ejecutiva_libre {
+	background-color: #ff9900
+
+} 
+.ejecutiva_reservado {
+	background-color: #cc6600
+}
+.turista_libre {
+	background-color: #0099ff
+}
+.turista_reservado {
+	background-color: #3366ff
+}
+.asiento_reservado {
+	background-color: #ff0000
+
+}
+.asiento_container {
+	margin: 0 auto;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+       
+}
+.asiento_separador {
+	background-color: #bcbcbc	
+}
+.tabla_asientos {
+	margin-top:30px; 
+	margin-left:30px;
+	table-layout:fixed;
+}
+
+</style>
+
+
+
+</head>
+<body onload ='carga()'>
+	<div id="container">
+        <br>
+        <div id="Logo">
+                <br>
+                <div id="logoimagen">
+        <img width="100%" src="logo/logo.jpg">                 
+                 </div>
+                 </div>
+                 <div id="Menu">                         
+                      <a  href="#seleccion">Seleccion de Asientos</a>
+                 </div>
+                 <div id="Contenido">
+
+<p class="titulo">Compra pasajes - Paso 3 de 5</p>
+<br><br>
+<form id="formcomprapasajes">
+	<div>
+	<label for="ApelNom">Apellido y nombre:</label>
+	<input id="ApelNom" size="35" class="text_des" value="Marchilli, María José" readonly="readonly"/>
+</div>
+<div>
+	<label for="destino">Destino:</label>
+	<input id="destino" size="35" class="text_des" value="Mendoza, Argentina (MDZ)" readonly="readonly"/>
+</div>
+<div>
+	<label for="avion">Modelo de avión:</label>
+	<input id="avion" size="35"class="text_des" value="Sukhoi Superjet 100-95B" readonly="readonly"/>
+</div>
+<div>
+	<label for="horaPartida">Hora de partida:</label>
+	<input id="horaPartida" size="5"class="text_des" value="07:20hs" readonly="readonly"/>
+</div>
+<div id="cantpas">
+	<label for="cantiPasajeros" id="lbl_cantPasajeros">Cantidad de pasajeros:</label>
+	<input type="text" id="cantPasajeros" size="5"class="text_des" value="2" readonly="readonly"/>
+</div>
+<div>
+	<label for="importeTotal">Importe total:</label>
+	<input  size="10" value="1.670$"class="text_des" readonly="readonly"/>
+</div>
+</form>
+<br><br>
+<hr>
+<a name="seleccion"></a>
+
+<p class="titulo">Seleccione los asientos</p>
+Haga clic en los asientos a reservar.
+<br><br>
+<table class="tabla_asientos">
+	<tr>
+		<td>
+			<div class="asiento_container">
+				<input type="button" id="el1" class="ejecutiva_libre" onclick="reservas(this,'el1')" value="1">
+				<input type="button" id="er1" class="ejecutiva_reservado" onclick="reservas(this,'er1')" value="5">
+				<input type="button" id="er2" class="ejecutiva_reservado" onclick="reservas(this,'er2')" value="9  ">
+				<input type="button" class="asiento_separador">
+				<input type="button" id="tr1" class="turista_reservado" onclick="reservas(this,'tr1')" value="13">
+				<input type="button" id="tr2" class="turista_reservado" onclick="reservas(this,'tr2')" value="17">
+				<input type="button" id="tr3" class="turista_reservado" onclick="reservas(this,'tr3')" value="21">
+				<input type="button" id="tl1" class="turista_libre" onclick="reservas(this,'tl1')" value="25">
+				<input type="button" id="tr4" class="turista_reservado" onclick="reservas(this,'tr4')" value="29">
+				<input type="button" id="tr5" class="turista_reservado" onclick="reservas(this,'tr5')" value="33">
+				<input type="button" id="tr6" class="turista_reservado" onclick="reservas(this,'tr6')" value="37">
+				<input type="button" id="tr7" class="turista_reservado" onclick="reservas(this,'tr7')" value="41">
+				<input type="button" id="tr8" class="turista_reservado" onclick="reservas(this,'tr8')" value="45">
+				<input type="button" id="tl2" class="turista_libre" onclick="reservas(this,'tl2')" value="49">
+				<input type="button" id="tl3" class="turista_libre" onclick="reservas(this,'tl3')" value="53">
+			</td>
+		</tr>
+		<tr>
+		<td>
+			<div class="asiento_container">
+				<input type="button" id="el2" class="ejecutiva_libre" onclick="reservas(this,'el2')" value="2">
+				<input type="button" id="er3" class="ejecutiva_reservado" onclick="reservas(this, 'er3')" value="6">
+				<input type="button" id="er4" class="ejecutiva_reservado" onclick="reservas(this,'er4')" value="10">
+				<input type="button" class="asiento_separador">
+				<input type="button" id="tr9" class="turista_reservado" onclick="reservas(this,'tr9')" value="14">
+				<input type="button" id="tr10" class="turista_reservado" onclick="reservas(this,'tr10')" value="18">
+				<input type="button" id="tl14" class="turista_libre" onclick="reservas(this, 'tl14')" value="22">
+				<input type="button" id="tl15" class="turista_libre" onclick="reservas(this,'tl15')" value="26">
+				<input type="button" id="tr11" class="turista_reservado" onclick="reservas(this,'tr11')" value="30">
+				<input type="button" id="tl16" class="turista_libre" onclick="reservas(this,'tl16')" value="34">
+				<input type="button" id="tr12" class="turista_reservado" onclick="reservas(this,'tr12')" value="38">
+				<input type="button" id="tr13" class="turista_reservado" onclick="reservas(this,'tr13')" value="42">
+				<input type="button" id="tl17" class="turista_libre" onclick="reservas(this,'tl17')" value="46">
+				<input type="button" id="tl18" class="turista_libre" onclick="reservas(this,'tl18')" value="50">
+				<input type="button" id="tl19" class="turista_libre" onclick="reservas(this, 'tl19')" value="54">
+			</td>
+		</tr>
+		
+		<table class="tabla_asientos">
+	<tr>
+		<td>
+			<div class="asiento_container">
+				<input type="button" id="el3" class="ejecutiva_libre" onclick="reservas(this,'el3')" value="3">
+				<input type="button" id="el4" class="ejecutiva_libre" onclick="reservas(this,'el4')" value="7">
+				<input type="button" id="er5" class="ejecutiva_reservado" onclick="reservas(this,'er5')" value="11">
+				<input type="button" class="asiento_separador">
+				<input type="button" id="tr14" class="turista_reservado" onclick="reservas(this,'tr14')" value="15">
+				<input type="button" id="tr15" class="turista_reservado" onclick="reservas(this,'tr15')" value="19">
+				<input type="button" id="tr16" class="turista_reservado" onclick="reservas(this,'tr16')" value="23">
+				<input type="button" id="tr17" class="turista_reservado" onclick="reservas(this,'tr17')" value="27">
+				<input type="button" id="tr18" class="turista_reservado" onclick="reservas(this,'tr18')" value="33">
+				<input type="button" id="tr19" class="turista_reservado" onclick="reservas(this,'tr19')" value="35">
+				<input type="button" id="tr20" class="turista_reservado" onclick="reservas(this,'tr20')" value="39">
+				<input type="button" id="tl20" class="turista_libre" onclick="reservas(this,'tl20')" value="43">
+				<input type="button" id="tl21" class="turista_libre" onclick="reservas(this,'tl21')" value="47">
+				<input type="button" id="tl22" class="turista_libre" onclick="reservas(this,'tl22')" value="51">
+				<input type="button" id="tl23" class="turista_libre" onclick="reservas(this,'tl23')" value="55">
+			</td>
+		</tr>
+		<tr>
+		<td>
+			<div class="asiento_container">
+				<input type="button" id="el5" class="ejecutiva_libre" onclick="reservas(this,'el5')" value="4">
+				<input type="button" id="er6" class="ejecutiva_reservado" onclick="reservas(this,'er6')" value="8">
+				<input type="button" id="er7" class="ejecutiva_reservado" onclick="reservas(this,'er7')" value="12">
+				<input type="button" class="asiento_separador">
+				<input type="button" id="tr21" class="turista_reservado" onclick="reservas(this,'tr21')" value="16">
+				<input type="button" id="tr22" class="turista_reservado" onclick="reservas(this,'tr22')" value="20">
+				<input type="button" id="tr23" class="turista_reservado" onclick="reservas(this,'tr23')" value="24">
+				<input type="button" id="tr24" class="turista_reservado" onclick="reservas(this,'tr24')" value="28">
+				<input type="button" id="tr25" class="turista_reservado" onclick="reservas(this,'tr25')" value="32">
+				<input type="button" id="tr26" class="turista_reservado" onclick="reservas(this,'tr26')" value="36">
+				<input type="button" id="tr27" class="turista_reservado" onclick="reservas(this,'tr27')" value="40">
+				<input type="button" id="tl24" class="turista_libre" onclick="reservas(this,'tl24')" value="44">
+				<input type="button" id="tl25" class="turista_libre" onclick="reservas(this,'tl25')" value="48">
+				<input type="button" id="tl26" class="turista_libre" onclick="reservas(this,'tl26')" value="52">
+				<input type="button" id="tl27" class="turista_libre" onclick="reservas(this,'tl27')" value="56">
+			</td>
+		</tr>	
+	 
+	
+	<script type="text/javascript">
+	var conti;
+	var clase_nomb;
+	 
+	function carga() {
+	conti = document.getElementById("cantPasajeros").value;
+	return;
+}
+	
+	function reservas(input,id) {  
+	if (document.getElementById(id).className == 'asiento_reservado') {
+			conti = conti + 1;
+			document.getElementById(id).className = clase_nomb;
+
+		}	  
+	
+	 
+	else if (conti == 0) {
+		alert("Limite De Asientos Alcanzado")
+
+	}
+
+
+		else if (document.getElementById(id).className == 'turista_reservado' || document.getElementById(id).className == 'ejecutiva_reservado') {
+			alert("Lugar No Disponible, Ya ha sido reservado");
+			 }
+		
+	else if ((document.getElementById(id).className == 'turista_libre' || document.getElementById(id).className == 'ejecutiva_libre') && conti <= 2) 
+			{	
+			    clase_nomb = document.getElementById(id).className;			
+				document.getElementById(id).className = 'asiento_reservado';
+				conti= conti -1;
+				alert("Felicitaciones!! Usted ha reservado");
+							
+			}
+
+		
+			
+
+	}
+
+	
+</script>
+</body>
+</html>
